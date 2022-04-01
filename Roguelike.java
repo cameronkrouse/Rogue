@@ -8,10 +8,13 @@ import java.awt.Color;
 
 public class Roguelike {
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
+		
 	Roguelike game = new Roguelike("OwO");
 	game.run();
-}
+		
+	}
+	
 	private String name;
 	private Creature player;
 
@@ -21,44 +24,57 @@ public class Roguelike {
 
 	private UserInterface ui;
 
-	public Roguelike(String name) {
+	public Roguelike(String name, int windowHeight, int windowWidth) {
+		
 		this.name = name;
 		this.player = new Creature("player", '@', Color.white, 10, 10);
 		ui = new UserInterface(this.name, 80, 24);
+		
 	}
 	
 
 
+public void processInput() { // Player Input Processing
 
-public void processInput() {
+	
 	InputEvent event = ui.getnextInput();
+	
 	if(event instanceof KeyEvent) {
+		
 		KeyEvent keypress = (KeyEvent)event;
+		
 		switch (keypress.getKeyCode()){
+				
 			case KeyEvent.VK_LEFT:
+				
 				player.move(-1,0);
 				break;
+				
 			case KeyEvent.VK_RIGHT:
+				
 				player.move(1,0);
 				break;
+				
 			case KeyEvent.VK_UP:
+				
 				player.move(0,1);
 				break;
+				
 			case KeyEvent.VK_DOWN:
+				
 				player.move(0,-1);
 				break;
+				
 		}
 	}
 }
 
-public void render() {
-	ui.clear();
-	ui.drawChar(player.getGlyph(), player.getX(), player.getY(), player.getColor());
-	ui.refresh();
-}
+	
+
 
 
 public void run() {
+	
     isRunning = true;
 
     while(isRunning) {
