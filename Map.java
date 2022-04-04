@@ -1,29 +1,31 @@
 public class Map {
 
-	private char[][] map;
+	private char[][] mapGrid;
 	
 
 
 	public Map( int width, int height ) {
 	
-		this.map = new char[width][height];
-	
+		this.mapGrid = new char[width][height];
 		for(int x = 0 ; x < width ; x++) {
 	
 			for(int y = 0 ; y < height ; y++) {
 	
 				if(x == 0 || y == 0 || x == width || y == height) {
 	
-					map[x][y] = '#';
+					mapGrid[x][y] = '#';
 				}
 				else {
 	
-					map[x][y] = '.';
+					mapGrid[x][y] = '.';
 				}
 			}
-			
 		}
-		
+	}
+
+	public char[][] getMapGrid() {
+
+		return mapGrid;
 	}
 }
 

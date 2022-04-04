@@ -2,14 +2,18 @@ public class AsciiScreen {
 	private int w; //Display Width  (in characters)
 	private int h; //Display Height (in characters)
 	private char[][] displayBuffer; //Array for holding screen state
+	private Map map;
 
 	public AsciiScreen(int x, int y) {
 		
-		this.width = w;
-		this.height = h;
+		this.w = x;
+		this.h = y;
 		this.displayBuffer = new char[w][h];
+
+		this.map = new Map(x,y);
 		
 	}
+
 
 	private void drawScreen() { //Prints displayBuffer to the screen
 		
@@ -25,13 +29,9 @@ public class AsciiScreen {
 
 	public void loadNextFrame() {
 
-		for(int x = 0 ; x < w ; x++) {
+		displayBuffer = map.getMapGrid; //First, load map into display buffer
 
-			for(int y = 0 ; y < h ; y++) {
-
-				displayBuffer[x][y] = currentMap[x][y];
-			}
-		}
+		displayBuffer[]
 		
 
 		
