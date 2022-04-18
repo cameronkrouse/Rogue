@@ -1,4 +1,4 @@
-package roguelike.entities;
+package Entities;
 
 import java.awt.Color;
 

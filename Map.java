@@ -6,7 +6,7 @@ public class Map {
 
 	public Map( int width, int height ) {
 	
-		this.mapGrid = new char[width][height];
+		
 		for(int x = 0 ; x < width ; x++) {
 	
 			for(int y = 0 ; y < height ; y++) {
